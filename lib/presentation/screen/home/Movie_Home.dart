@@ -2,9 +2,14 @@ import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
-import 'barrel_home.dart';
+import 'Export_Widgets.dart';
 
-class HomeScreen extends StatelessWidget {
+class Home extends StatefulWidget{
+  @override
+  HomeScreen createState() => HomeScreen();
+}
+
+class HomeScreen extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             WidgetHomeToolbar(),
-            WidgetHomeBanner(),
+            WidgetBanner(),
             WidgetSpacer(height: 30),
             WidgetHomeCategories(),
             WidgetSpacer(height: 30),

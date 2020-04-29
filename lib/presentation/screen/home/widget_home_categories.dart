@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 
 class WidgetHomeCategories extends StatelessWidget {
   List<_ItemCategoryVM> items = [
-    _ItemCategoryVM("Thriller", "assets/ic_film.svg"),
+
+    _ItemCategoryVM("Thriller", "assets/ic_activity.svg"),
     _ItemCategoryVM("Romantic", "assets/ic_events.svg"),
     _ItemCategoryVM("Action", "assets/ic_plays.svg"),
     _ItemCategoryVM("Comedy", "assets/ic_sports.svg"),
