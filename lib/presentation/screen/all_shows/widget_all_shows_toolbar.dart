@@ -26,7 +26,7 @@ class WidgetAllShowsToolbar extends StatelessWidget {
           ),
           Expanded(
             child:
-                Text('Showing Movies', style: FONT_CONST.MEDIUM_WHITE_16),
+                Text('Movies List', style: FONT_CONST.MEDIUM_WHITE_16),
           ),
 
         ],

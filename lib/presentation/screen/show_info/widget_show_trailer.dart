@@ -11,7 +11,7 @@ class WidgetShowTrailer extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Image.asset(
-            "images/thumb_show.png",
+            "images/rush_trailer.png",
             fit: BoxFit.contain,
           ),
           Align(

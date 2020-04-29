@@ -21,22 +21,23 @@ class ShowInfoScreen extends StatelessWidget {
                 WidgetShowTrailer(),
                 WidgetShowDesc(),
                 WidgetSpacer(height: 14),
-                WidgetOffers(),
+//                WidgetOffers(),
                 WidgetSpacer(height: 14),
-                WidgetShowReview(),
+                WidgetDisplayReviews(),
+                WidgetDisplayReview2(),
                 WidgetSpacer(height: 14),
                 WidgetShowCasts(),
                 WidgetSpacer(height: 70),
               ],
             ),
-            _buildBtnBookSeat(),
+            _buildBtnTheater(),
           ],
         ),
       ),
     );
   }
 
-  _buildBtnBookSeat() {
+  _buildBtnTheater() {
     return Positioned(
       bottom: 0,
       right: 0,
@@ -48,13 +49,8 @@ class ShowInfoScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              MySvgImage(
-                width: 18.25,
-                height: 16.1,
-                path: 'assets/ic_sofa.svg',
-              ),
               WidgetSpacer(width: 5),
-              Text('Book seats', style: FONT_CONST.MEDIUM_WHITE_16),
+              Text('Check Availability', style: FONT_CONST.MEDIUM_WHITE_16),
             ],
           ),
           onPressed: () {

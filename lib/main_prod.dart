@@ -9,7 +9,7 @@ void main() {
 
   runApp(
     AppConfig(
-      appName: "FindSeat",
+      appName: "EAP Films",
       flavorName: "prod",
       initialRoute: Router.SPLASH,
       child: MyApp(),

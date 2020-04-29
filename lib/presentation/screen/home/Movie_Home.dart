@@ -25,7 +25,7 @@ class HomeScreen extends State<Home> {
             WidgetRecommendedSeats(),
             WidgetSpacer(height: 30),
             WidgetNearbyTheatres(),
-            WidgetSpacer(height: 30),
+           WidgetSpacer(height: 30),
             WidgetHomeEvents(),
             WidgetSpacer(height: 30),
             WidgetHomePlays(),
