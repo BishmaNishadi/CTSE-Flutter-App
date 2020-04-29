@@ -7,7 +7,7 @@ class WidgetAllShowsToolbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: COLOR_CONST.BLUE,
+      color: COLOR_CONST.DEFAULT,
       height: 50,
       child: Row(
         children: <Widget>[
@@ -26,30 +26,13 @@ class WidgetAllShowsToolbar extends StatelessWidget {
           ),
           Expanded(
             child:
-                Text('Movies in coimbatore', style: FONT_CONST.MEDIUM_WHITE_16),
+                Text('Showing Movies', style: FONT_CONST.MEDIUM_WHITE_16),
           ),
-          _buildActions(),
+
         ],
       ),
     );
   }
 
-  _buildActions() {
-    return Row(
-      children: <Widget>[
-        MySvgImage(
-          path: "assets/ic_search.svg",
-          width: 20,
-          height: 20,
-        ),
-        WidgetSpacer(width: 12),
-        MySvgImage(
-          path: "assets/ic_more.svg",
-          width: 20,
-          height: 20,
-        ),
-        WidgetSpacer(width: 12)
-      ],
-    );
-  }
+
 }

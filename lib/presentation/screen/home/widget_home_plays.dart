@@ -17,7 +17,7 @@ class WidgetHomePlays extends StatelessWidget {
   Widget build(BuildContext context) {
     return WidgetHomePosters(
       items: items,
-      label: 'Plays',
+      label: 'Best of 2020',
       iconPath: 'assets/ic_plays.svg',
     );
   }

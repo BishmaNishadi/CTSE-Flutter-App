@@ -33,17 +33,17 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
 
   List<ItemShowVM> items = [
     ItemShowVM(
-        "images/movie/fdf8fabbc12db9cddc60574f691d26c6@2x.png", "Bigil", 84),
+        "images/movie/fdf8fabbc12db9cddc60574f691d26c6@2x.png", "Bigil", 78),
     ItemShowVM(
-        "images/movie/d4baeb81488e83cb54f041917ff62f59@2x.png", "Kaithi", 98),
+        "images/movie/d4baeb81488e83cb54f041917ff62f59@2x.png", "Kaithi", 90),
     ItemShowVM(
-        "images/movie/202693a21503970eac9090537062d5d3.png", "Gabbar", 84),
+        "images/movie/202693a21503970eac9090537062d5d3.png", "Gabbar", 95),
     ItemShowVM(
-        "images/movie/81c106f1df72317e034fafa6c4975e9f.png", "Pizza - part 2", 98),
+        "images/movie/81c106f1df72317e034fafa6c4975e9f.png", "Pizza - part 2", 99),
     ItemShowVM(
-        "images/movie/61d30e82f43b1cab9f49e576ae457086@2x.png", "Asuran", 94),
+        "images/movie/61d30e82f43b1cab9f49e576ae457086@2x.png", "Asuran", 87),
     ItemShowVM(
-        "images/movie/3890dc6228535cbf5eebd947738d4e52.png", "Sarkar", 87)
+        "images/movie/3890dc6228535cbf5eebd947738d4e52.png", "Sarkar", 82)
   ];
 
   @override

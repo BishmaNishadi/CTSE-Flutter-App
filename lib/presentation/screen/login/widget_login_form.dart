@@ -4,6 +4,7 @@ import 'package:find_seat/presentation/screen/login/widget_btn_facebook.dart';
 import 'package:find_seat/presentation/screen/login/widget_btn_google.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class WidgetLoginForm extends StatefulWidget {
   @override
@@ -11,6 +12,8 @@ class WidgetLoginForm extends StatefulWidget {
 }
 
 class _WidgetLoginFormState extends State<WidgetLoginForm> {
+  String _email, _password;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -94,7 +97,7 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
     return SizedBox(
       width: double.infinity,
       height: 50,
-      child: FlatButton(
+      child: RaisedButton(
         onPressed: () {
           Navigator.pushNamed(context, Router.HOME);
         },
@@ -119,16 +122,28 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
         borderRadius: BorderRadius.circular(10),
         color: COLOR_CONST.GRAY3,
       ),
+
       child: Center(
-        child: TextField(
+        key: _formKey,
+        child: TextFormField(
+
           style: FONT_CONST.REGULAR_GRAY1_12,
           maxLines: 1,
           keyboardType: TextInputType.text,
           obscureText: true,
+
           textAlign: TextAlign.left,
-          decoration: InputDecoration.collapsed(
-            hintText: 'Password',
+          validator: (input) {
+            if(input.length < 6){
+              return 'Please enter an password';
+            }
+          },
+          onSaved: (input) => _password = input,
+          decoration: InputDecoration(
+            labelText: 'Password',
+            //hintText: 'Password',
           ),
+
         ),
       ),
     );
@@ -136,6 +151,7 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
 
   _buildTextFieldUsername() {
     return Container(
+
       height: 50,
       padding: EdgeInsets.symmetric(horizontal: 17),
       decoration: BoxDecoration(
@@ -144,16 +160,32 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
         color: COLOR_CONST.GRAY3,
       ),
       child: Center(
-        child: TextField(
+        child: TextFormField(
           style: FONT_CONST.REGULAR_GRAY1_12,
           maxLines: 1,
+          validator: (input) {
+            if(input.isEmpty){
+              return 'Please enter an email';
+            }
+          },
+          onSaved: (input) => _email = input,
           keyboardType: TextInputType.text,
           textAlign: TextAlign.left,
-          decoration: InputDecoration.collapsed(
-            hintText: 'Username',
+          decoration: InputDecoration(
+            labelText: 'Username',
+            //hintText: 'Username',
           ),
         ),
       ),
     );
+  }
+  void signIn (){
+    //validate fields
+    //login to firebase
+    final formState = _formKey.currentState;
+    if(formState.validate()){
+      FirebaseAuth.instance.signInWithEmailAndPassword(email: null, password: null);
+
+    }
   }
 }

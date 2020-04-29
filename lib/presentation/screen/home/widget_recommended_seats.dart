@@ -22,7 +22,7 @@ class WidgetRecommendedSeats extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Recommended Seats'.toUpperCase(),
+          Text('Recommended Movies'.toUpperCase(),
               style: FONT_CONST.MEDIUM_BLACK2_14),
           WidgetSpacer(height: 14),
           _buildListRecommendedSeats(),

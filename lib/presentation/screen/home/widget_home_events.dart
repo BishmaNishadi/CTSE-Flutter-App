@@ -17,7 +17,7 @@ class WidgetHomeEvents extends StatelessWidget {
   Widget build(BuildContext context) {
     return WidgetHomePosters(
       items: items,
-      label: 'Events',
+      label: 'Top Rated Movies',
       iconPath: 'assets/ic_events.svg',
     );
   }

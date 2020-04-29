@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 
 class WidgetHomeCategories extends StatelessWidget {
   List<_ItemCategoryVM> items = [
-    _ItemCategoryVM("Movies", "assets/ic_film.svg"),
-    _ItemCategoryVM("Events", "assets/ic_events.svg"),
-    _ItemCategoryVM("Plays", "assets/ic_plays.svg"),
-    _ItemCategoryVM("Sports", "assets/ic_sports.svg"),
-    _ItemCategoryVM("Activity", "assets/ic_activity.svg"),
-    _ItemCategoryVM("Monum", "assets/ic_monum.svg"),
+    _ItemCategoryVM("Thriller", "assets/ic_film.svg"),
+    _ItemCategoryVM("Romantic", "assets/ic_events.svg"),
+    _ItemCategoryVM("Action", "assets/ic_plays.svg"),
+    _ItemCategoryVM("Comedy", "assets/ic_sports.svg"),
+    _ItemCategoryVM("Horror", "assets/ic_activity.svg"),
+    _ItemCategoryVM("Real life", "assets/ic_monum.svg"),
   ];
 
   @override
@@ -21,7 +21,7 @@ class WidgetHomeCategories extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Seat categories'.toUpperCase(),
+          Text('Movie categories'.toUpperCase(),
               style: FONT_CONST.MEDIUM_BLACK2_14),
           WidgetSpacer(height: 14),
           _buildListCategory(),
