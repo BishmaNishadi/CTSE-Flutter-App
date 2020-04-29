@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "839447803602",
+    "firebase_url": "https://moviesapp-ce53e.firebaseio.com",
+    "project_id": "moviesapp-ce53e",
+    "storage_bucket": "moviesapp-ce53e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839447803602:android:3fb515d9c8535d2f4c5f0b",
+        "android_client_info": {
+          "package_name": "com.khoaha.katana.find_seat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839447803602-4gp4qvcn9qkemo9ngcdhrsmp4id9t0n3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAW16NRnbR81Ti93Ht1y7i-CwG3O9BcBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839447803602-4gp4qvcn9qkemo9ngcdhrsmp4id9t0n3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
