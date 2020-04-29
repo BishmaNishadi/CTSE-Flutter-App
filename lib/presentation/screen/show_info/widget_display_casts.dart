@@ -4,13 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WidgetShowCasts extends StatelessWidget {
-  List<ItemCast> items = [
-    ItemCast('Chadwick', 'images/casts/81202d0dea55189fa442a1ab932a81a7.png'),
-    ItemCast(
-        'Letitia Wright', 'images/casts/646262125800725e14d8c4ff4b2a2181.png'),
-    ItemCast('B. Jordan', 'images/casts/a053e9fb0c813cd15b34a2edff71ae9d.png'),
-    ItemCast(
-        'Lupita Nyong', 'images/casts/289bf4c714c627dc42b17199024a152d.png'),
+  List<ModelCast> model = [
+    ModelCast('Uddhika', 'images/casts/81202d0dea55189fa442a1ab932a81a7.png'),
+    ModelCast(
+        'Iresha', 'images/casts/646262125800725e14d8c4ff4b2a2181.png'),
+    ModelCast('Saranga', 'images/casts/a053e9fb0c813cd15b34a2edff71ae9d.png'),
+    ModelCast(
+        'Lucky Dias', 'images/casts/289bf4c714c627dc42b17199024a152d.png'),
+    ModelCast(
+        'Sanath', 'images/casts/289bf4c714c627dc42b17199024a152d.png'),
+    ModelCast(
+        'Janith', 'images/casts/289bf4c714c627dc42b17199024a152d.png'),
   ];
 
   @override
@@ -24,10 +28,10 @@ class WidgetShowCasts extends StatelessWidget {
           Row(
             children: <Widget>[
               Expanded(
-                  child: Text('Crews & Casts',
+                  child: Text('Casts',
                       style: FONT_CONST.MEDIUM_BLACK2_14)),
               Expanded(
-                  child: Text('View all >',
+                  child: Text('Slide to view >',
                       style: FONT_CONST.REGULAR_DEFAULT_10,
                       textAlign: TextAlign.right)),
             ],
@@ -43,10 +47,10 @@ class WidgetShowCasts extends StatelessWidget {
                 return WidgetSpacer(width: 14);
               },
               itemBuilder: (context, index) {
-                var item = items[index];
+                var item = model[index];
                 return _WidgetItemCast(item);
               },
-              itemCount: items.length,
+              itemCount: model.length,
             ),
           ),
         ],
@@ -56,9 +60,9 @@ class WidgetShowCasts extends StatelessWidget {
 }
 
 class _WidgetItemCast extends StatelessWidget {
-  ItemCast item;
+  ModelCast model;
 
-  _WidgetItemCast(this.item);
+  _WidgetItemCast(this.model);
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +75,7 @@ class _WidgetItemCast extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             clipBehavior: Clip.antiAlias,
             child: Image.asset(
-              item.photo,
+              model.photo,
               fit: BoxFit.cover,
               width: 85,
               height: 107,
@@ -79,7 +83,7 @@ class _WidgetItemCast extends StatelessWidget {
           ),
           WidgetSpacer(height: 5),
           Text(
-            item.name,
+            model.name,
             style: FONT_CONST.REGULAR_GRAY4_12,
             textAlign: TextAlign.center,
             maxLines: 2,
@@ -90,9 +94,9 @@ class _WidgetItemCast extends StatelessWidget {
   }
 }
 
-class ItemCast {
+class ModelCast {
   String name;
   String photo;
 
-  ItemCast(this.name, this.photo);
+  ModelCast(this.name, this.photo);
 }

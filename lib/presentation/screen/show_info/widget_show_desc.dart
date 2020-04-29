@@ -16,83 +16,58 @@ class WidgetShowDesc extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 flex: 4,
-                child: _buildShowName_Date(),
-              ),
-              Expanded(
-                flex: 1,
-                child: _buildLike_Votes(),
+                child: _buildMovieName_info(),
               ),
             ],
           ),
           WidgetSpacer(height: 12),
-          _buildTagList(),
+          _createTags(),
           WidgetSpacer(height: 10),
-          _buildExtraInfo(),
+          _createAdditinalInfo(),
         ],
       ),
     );
   }
 
-  _buildShowName_Date() {
+  _buildMovieName_info() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('Black Panther - The King', style: FONT_CONST.MEDIUM_BLACK2_16),
+        Text('RUSH - A STORY WITH LOVE', style: FONT_CONST.MEDIUM_BLACK2_16),
         WidgetSpacer(height: 6),
-        Text('UA | Oct 15, 2019', style: FONT_CONST.REGULAR_GRAY4_12)
+        Text('Release | May 15, 2020', style: FONT_CONST.REGULAR_GRAY4_12)
       ],
     );
   }
 
-  _buildLike_Votes() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: <Widget>[
-        Wrap(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 2),
-              child: Icon(
-                Icons.favorite,
-                size: 20,
-                color: COLOR_CONST.DEFAULT,
-              ),
-            ),
-            Text('98%', style: FONT_CONST.MEDIUM_BLACK2_16)
-          ],
-        ),
-        WidgetSpacer(height: 6),
-        Text('1.8k votes', style: FONT_CONST.REGULAR_DEFAULT_10)
-      ],
-    );
-  }
-
-  _buildTagList() {
+  _createTags() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Text('Tami', style: FONT_CONST.REGULAR_DEFAULT_12),
+        Text('Sinhala', style: FONT_CONST.REGULAR_DEFAULT_12),
         WidgetSpacer(width: 10),
-        _buildTag('3D'),
+        _bldTag('3D'),
         WidgetSpacer(width: 6),
-        _buildTag('2D'),
+        _bldTag('Action'),
+        WidgetSpacer(width: 6),
+        _bldTag('Romance'),
       ],
     );
   }
 
-  _buildTag(String tag) {
+  _bldTag(String tag) {
     return Container(
       child: Center(child: Text(tag, style: FONT_CONST.REGULAR_DEFAULT_12)),
       padding: EdgeInsets.symmetric(horizontal: 4, vertical: 3),
       decoration: BoxDecoration(
-          color: COLOR_CONST.TAG_BG,
-          borderRadius: BorderRadius.circular(3),
+          color: COLOR_CONST.TAGMOV_BG,
+          borderRadius: BorderRadius.circular(4),
           shape: BoxShape.rectangle),
     );
   }
 
-  _buildExtraInfo() {
+  _createAdditinalInfo() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,19 +76,11 @@ class WidgetShowDesc extends StatelessWidget {
           width: 10,
           height: 10,
           color: COLOR_CONST.GRAY1,
-          path: 'assets/ic_clock_line.svg',
+          path: 'assets/clock_ic.svg',
         ),
-        WidgetSpacer(width: 6),
-        Text('2h 59m', style: FONT_CONST.REGULAR_GRAY1_10),
-        WidgetSpacer(width: 9),
-        MySvgImage(
-          width: 10,
-          height: 10,
-          path: 'assets/ic_plays_line.svg',
-          color: COLOR_CONST.GRAY1,
-        ),
-        WidgetSpacer(width: 6),
-        Text('Action, Drama', style: FONT_CONST.REGULAR_GRAY1_10),
+        WidgetSpacer(width: 7),
+        Text('3h 15m', style: FONT_CONST.REGULAR_GRAY1_10),
+        WidgetSpacer(width: 10),
       ],
     );
   }

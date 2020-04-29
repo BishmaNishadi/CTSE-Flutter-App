@@ -10,6 +10,7 @@ class AllShowsScreen extends StatelessWidget {
           child: Column(
             children: <Widget>[
               WidgetAllShowsToolbar(),
+              WidgetHomeBanner(),
               Expanded(
                 child: WidgetShowGallery(),
               )

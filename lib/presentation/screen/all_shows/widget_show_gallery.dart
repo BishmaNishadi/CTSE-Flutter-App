@@ -18,7 +18,7 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
   @override
   void initState() {
     _controller = TabController(
-      length: 3,
+      length: 2,
       vsync: this,
     );
 
@@ -33,17 +33,17 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
 
   List<ItemShowVM> items = [
     ItemShowVM(
-        "images/movie/fdf8fabbc12db9cddc60574f691d26c6@2x.png", "Bigil", 78),
+        "images/movie/kathuru_mithuru.png", "කතුරු මිතුරු"),
     ItemShowVM(
-        "images/movie/d4baeb81488e83cb54f041917ff62f59@2x.png", "Kaithi", 90),
+        "images/movie/vijayaba_kollaya.png", "විජයබා කොල්ලය"),
     ItemShowVM(
-        "images/movie/202693a21503970eac9090537062d5d3.png", "Gabbar", 95),
+        "images/movie/ranja.png", "‍රන්ජා"),
     ItemShowVM(
-        "images/movie/81c106f1df72317e034fafa6c4975e9f.png", "Pizza - part 2", 99),
+        "images/movie/aloko_udapadi.png", "ආලෝකෝ උදපාදි"),
     ItemShowVM(
-        "images/movie/61d30e82f43b1cab9f49e576ae457086@2x.png", "Asuran", 87),
+        "images/movie/garasarapa.png", "ඝරසරප"),
     ItemShowVM(
-        "images/movie/3890dc6228535cbf5eebd947738d4e52.png", "Sarkar", 82)
+        "images/movie/rush.png", "Rush")
   ];
 
   @override
@@ -57,7 +57,7 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
             children: <Widget>[
               WidgetListShow(items),
               WidgetListShow(items.sublist(1, 3).toList()),
-              WidgetListShow(items.sublist(3, 5).toList()),
+//              WidgetListShow(items.sublist(3, 5).toList()),
             ],
           ),
         )
@@ -67,7 +67,7 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
 
   _buildTabs() {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: TabBar(
         controller: _controller,
         tabs: <Widget>[
@@ -76,9 +76,6 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
           ),
           Tab(
             text: 'Coming soon',
-          ),
-          Tab(
-            text: 'Exclusive',
           ),
         ],
         onTap: (index) {},

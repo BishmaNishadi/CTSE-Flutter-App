@@ -1,3 +1,4 @@
+export '../home/widget_home_banner.dart';
 export 'sc_all_shows.dart';
 export 'widget_all_shows_toolbar.dart';
 export 'widget_show_gallery.dart';

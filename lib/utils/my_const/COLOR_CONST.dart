@@ -36,7 +36,7 @@ class COLOR_CONST {
   static final HexColor GOOGLE_BORDER_BTN = new HexColor("#F14336");
   static final HexColor FACEBOOK_BTN = new HexColor("#F5F9FF");
   static final HexColor FACEBOOK_BORDER_BTN = new HexColor("#3164CE");
-  static final HexColor TAG_BG = new HexColor("#FFE5EF");
+  static final HexColor TAGMOV_BG = new HexColor("#FFE5EF");
   static final HexColor GIFT_BG1 = new HexColor("#FCCAC6");
   static final HexColor GIFT_BG2 = new HexColor("#2687D57E");
   static final HexColor TIME_SLOT_BG = new HexColor("#FCFCFC");

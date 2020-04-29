@@ -4,7 +4,7 @@ class WidgetHomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image.asset("images/top.png",
+      child: Image.asset("images/savoyrajagiriya.jpg",
         fit: BoxFit.contain,
       ),
     );

@@ -22,19 +22,19 @@ class WidgetHomeToolbar extends StatelessWidget {
   _buildActions() {
     return Row(
       children: <Widget>[
-        MySvgImage(
-          path: "assets/ic_search.svg",
-          width: 20,
-          height: 20,
-        ),
+//        MySvgImage(
+//          path: "assets/ic_search.svg",
+//          width: 20,
+//          height: 20,
+//        ),
         WidgetSpacer(
           width: 12,
         ),
-        MySvgImage(
-          path: "assets/ic_noti.svg",
-          width: 20,
-          height: 20,
-        ),
+//        MySvgImage(
+//          path: "assets/ic_noti.svg",
+//          width: 20,
+//          height: 20,
+//        ),
         WidgetSpacer(width: 12),
       ],
     );
@@ -46,11 +46,11 @@ class WidgetHomeToolbar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text('Book seats', style: FONT_CONST.SEMIBOLD_WHITE_16),
+          Text('EAP Films', style: FONT_CONST.SEMIBOLD_WHITE_16),
           Opacity(
             child: Row(
               children: <Widget>[
-                Text('Coimbatore', style: FONT_CONST.REGULAR_WHITE_12),
+                Text('Kasun', style: FONT_CONST.REGULAR_WHITE_12),
                 Icon(Icons.keyboard_arrow_down, color: COLOR_CONST.WHITE)
               ],
             ),
