@@ -6,13 +6,15 @@ import 'package:flutter/material.dart';
 class WidgetRecommendedSeats extends StatelessWidget {
   List<_ItemRecommendedSeatVM> items = [
     _ItemRecommendedSeatVM(
-        "images/movie/fdf8fabbc12db9cddc60574f691d26c6@2x.png", "Bigil", 84),
+        "images/movie/kathuru_mithuru.png", "Kathuru Mithuru", 84),
     _ItemRecommendedSeatVM(
-        "images/movie/d4baeb81488e83cb54f041917ff62f59@2x.png", "Kaithi", 98),
+        "images/movie/recommended_2.jpg", "Kaala", 98),
     _ItemRecommendedSeatVM(
-        "images/movie/61d30e82f43b1cab9f49e576ae457086@2x.png", "Asuran", 94),
+        "images/movie/thaala.jpg", "Thaala", 94),
     _ItemRecommendedSeatVM(
-        "images/movie/3890dc6228535cbf5eebd947738d4e52@2x.png", "Sarkar", 87)
+        "images/movie/rush.png", "Rush", 87),
+    _ItemRecommendedSeatVM(
+        "images/movie/vijayaba_kollaya.png", "Vijayabaha Kollaya", 87)
   ];
 
   @override
@@ -76,7 +78,7 @@ class _WidgetItemRecommendedSeat extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
               item.photo,
-              width: 93,
+              width: 90,
               height: 124,
               fit: BoxFit.contain,
             ),

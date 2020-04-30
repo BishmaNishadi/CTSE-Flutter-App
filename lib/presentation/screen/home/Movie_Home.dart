@@ -1,7 +1,6 @@
 import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
-
 import 'Export_Widgets.dart';
 
 class Home extends StatefulWidget{
@@ -23,13 +22,14 @@ class HomeScreen extends State<Home> {
             WidgetHomeCategories(),
             WidgetSpacer(height: 30),
             WidgetRecommendedSeats(),
-            WidgetSpacer(height: 30),
-            WidgetNearbyTheatres(),
+
            WidgetSpacer(height: 30),
             WidgetHomeEvents(),
             WidgetSpacer(height: 30),
-            WidgetHomePlays(),
+            BestOf2020Movies(),
             WidgetSpacer(height: 30),
+            WidgetSpacer(height: 30),
+            WidgetNearbyTheatres(),
           ],
         ),
       ),
