@@ -21,10 +21,10 @@ class HomeScreen extends State<Home> {
             WidgetSpacer(height: 30),
             WidgetHomeCategories(),
             WidgetSpacer(height: 30),
-            WidgetRecommendedSeats(),
+            RecommendedMovies(),
 
            WidgetSpacer(height: 30),
-            WidgetHomeEvents(),
+            TopRatedMovies(),
             WidgetSpacer(height: 30),
             BestOf2020Movies(),
             WidgetSpacer(height: 30),

@@ -1,7 +1,7 @@
 import 'package:find_seat/presentation/common_widgets/barrel_common_widgets.dart';
 import 'package:flutter/material.dart';
 
-class WidgetHomeEvents extends StatelessWidget {
+class TopRatedMovies extends StatelessWidget {
   List<ItemPosterVM> items = [
     ItemPosterVM('images/movie/alevel.jpg',
         'Happy Halloween 2K19', 'Music show'),

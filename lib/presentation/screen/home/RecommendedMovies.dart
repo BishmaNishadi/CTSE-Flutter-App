@@ -3,18 +3,18 @@ import 'package:find_seat/presentation/router.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
-class WidgetRecommendedSeats extends StatelessWidget {
+class RecommendedMovies extends StatelessWidget {
   List<_ItemRecommendedSeatVM> items = [
     _ItemRecommendedSeatVM(
-        "images/movie/kathuru_mithuru.png", "Kathuru Mithuru", 84),
+        "images/movie/kathuru_mithuru.png", "Kathuru Mithuru", 90),
     _ItemRecommendedSeatVM(
-        "images/movie/recommended_2.jpg", "Kaala", 98),
+        "images/movie/recommended_2.jpg", "Kaala", 85),
     _ItemRecommendedSeatVM(
-        "images/movie/thaala.jpg", "Thaala", 94),
+        "images/movie/thaala.jpg", "Thaala",84),
     _ItemRecommendedSeatVM(
         "images/movie/rush.png", "Rush", 87),
     _ItemRecommendedSeatVM(
-        "images/movie/vijayaba_kollaya.png", "Vijayabaha Kollaya", 87)
+        "images/movie/vijayaba_kollaya.png", "Vijayabaha Kollaya", 91)
   ];
 
   @override
@@ -24,26 +24,26 @@ class WidgetRecommendedSeats extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Recommended Movies'.toUpperCase(),
+          Text('RECOMMENDED MOVIES',
               style: FONT_CONST.MEDIUM_BLACK2_14),
           WidgetSpacer(height: 14),
-          _buildListRecommendedSeats(),
+          _RecommendedMovies(),
         ],
       ),
     );
   }
 
-  _buildListRecommendedSeats() {
+  _RecommendedMovies() {
     return Container(
-      height: 166,
+      height: 170,
       child: Padding(
         padding: const EdgeInsets.only(right: 20),
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            var item = items[index];
+            var it = items[index];
 
-            return _WidgetItemRecommendedSeat(item);
+            return _WidgetRecommendedMovies(it);
           },
           separatorBuilder: (context, index) {
             return WidgetSpacer(width: 14);
@@ -56,10 +56,10 @@ class WidgetRecommendedSeats extends StatelessWidget {
   }
 }
 
-class _WidgetItemRecommendedSeat extends StatelessWidget {
+class _WidgetRecommendedMovies extends StatelessWidget {
   _ItemRecommendedSeatVM item;
 
-  _WidgetItemRecommendedSeat(this.item);
+  _WidgetRecommendedMovies(this.item);
 
   BuildContext _context;
 
