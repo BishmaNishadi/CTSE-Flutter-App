@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 class TopRatedMovies extends StatelessWidget {
   List<ItemPosterVM> items = [
     ItemPosterVM('images/movie/alevel.jpg',
-        'Happy Halloween 2K19', 'Music show'),
+        'ALevel', 'Teens Movie'),
     ItemPosterVM('images/movie/dharmayu.jpg',
-        'Music DJ king monger Sertical Visa', 'Music show'),
+        'Dharmayuddaya', 'Action Movie'),
     ItemPosterVM('images/movie/garasarapa.jpg',
-        'Summer sounds festival', 'Comedy show'),
+        'Garasarapa', 'Action Movie'),
     ItemPosterVM('images/movie/seya.jpg',
-        'Happy Halloween 2K19', 'Music show'),
+        'Seya', 'Horror Movie'),
     ItemPosterVM('images/movie/pathini.jpg',
-        'Happy Halloween 2K19', 'Music show'),
+        'Paththini', 'Historical Movie'),
   ];
 
   @override

@@ -4,16 +4,16 @@ import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
 class RecommendedMovies extends StatelessWidget {
-  List<_ItemRecommendedSeatVM> items = [
-    _ItemRecommendedSeatVM(
+  List<_ImageRecommendedMovies> items = [
+    _ImageRecommendedMovies(
         "images/movie/kathuru_mithuru.png", "Kathuru Mithuru", 90),
-    _ItemRecommendedSeatVM(
+    _ImageRecommendedMovies(
         "images/movie/recommended_2.jpg", "Kaala", 85),
-    _ItemRecommendedSeatVM(
+    _ImageRecommendedMovies(
         "images/movie/thaala.jpg", "Thaala",84),
-    _ItemRecommendedSeatVM(
+    _ImageRecommendedMovies(
         "images/movie/rush.png", "Rush", 87),
-    _ItemRecommendedSeatVM(
+    _ImageRecommendedMovies(
         "images/movie/vijayaba_kollaya.png", "Vijayabaha Kollaya", 91)
   ];
 
@@ -24,10 +24,11 @@ class RecommendedMovies extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          WidgetSpacer(height: 14),
+        _RecommendedMovies(),
           Text('RECOMMENDED MOVIES',
               style: FONT_CONST.MEDIUM_BLACK2_14),
-          WidgetSpacer(height: 14),
-          _RecommendedMovies(),
+
         ],
       ),
     );
@@ -57,15 +58,15 @@ class RecommendedMovies extends StatelessWidget {
 }
 
 class _WidgetRecommendedMovies extends StatelessWidget {
-  _ItemRecommendedSeatVM item;
+  _ImageRecommendedMovies item;
 
   _WidgetRecommendedMovies(this.item);
 
-  BuildContext _context;
+  BuildContext context;
 
   @override
   Widget build(BuildContext context) {
-    _context = context;
+    context = context;
 
     return GestureDetector(
       onTap: () {
@@ -77,14 +78,14 @@ class _WidgetRecommendedMovies extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              item.photo,
+              item.image,
               width: 90,
               height: 124,
               fit: BoxFit.contain,
             ),
           ),
           WidgetSpacer(height: 4),
-          Text(item.title, style: FONT_CONST.REGULAR_BLACK2_12),
+          Text(item.des, style: FONT_CONST.REGULAR_BLACK2_12),
           WidgetSpacer(height: 2),
           Row(
             children: <Widget>[
@@ -94,7 +95,7 @@ class _WidgetRecommendedMovies extends StatelessWidget {
                 size: 14,
               ),
               WidgetSpacer(width: 6),
-              Text('${item.likePercent}%', style: FONT_CONST.REGULAR_GRAY6_10)
+              Text('${item.rate}%', style: FONT_CONST.REGULAR_GRAY6_10)
             ],
           ),
         ],
@@ -103,14 +104,14 @@ class _WidgetRecommendedMovies extends StatelessWidget {
   }
 
   void openShowDetails() {
-    Navigator.pushNamed(_context, Router.SHOW_INFO);
+    Navigator.pushNamed(context, Router.SHOW_INFO);
   }
 }
 
-class _ItemRecommendedSeatVM {
-  String photo;
-  String title;
-  int likePercent;
+class _ImageRecommendedMovies {
+  String image;
+  String des;
+  int rate;
 
-  _ItemRecommendedSeatVM(this.photo, this.title, this.likePercent);
+  _ImageRecommendedMovies(this.image, this.des, this.rate);
 }
