@@ -19,7 +19,7 @@ class HomeScreen extends State<Home> {
             WidgetHomeToolbar(),
             WidgetBanner(),
             WidgetSpacer(height: 30),
-            WidgetHomeCategories(),
+            WidgetHome(),
             WidgetSpacer(height: 30),
             RecommendedMovies(),
 

@@ -4,7 +4,7 @@ import 'package:find_seat/presentation/router.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
-class WidgetHomeCategories extends StatelessWidget {
+class WidgetHome extends StatelessWidget {
   List<_ItemCategoryVM> items = [
 
     _ItemCategoryVM("Thriller", "assets/ic_activity.svg"),
