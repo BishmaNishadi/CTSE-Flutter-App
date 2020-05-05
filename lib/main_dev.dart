@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 
 void main() {
-  MyApp.initSystemDefault();
+  //MyApp.initSystemDefault();
 
   runApp(
     AppConfig(

@@ -1,5 +1,8 @@
 import 'package:find_seat/presentation/common_widgets/barrel_common_widgets.dart';
 import 'package:find_seat/presentation/router.dart';
+import 'package:find_seat/presentation/screen/login/barrel_login.dart';
+import 'package:find_seat/presentation/screen/login/home.dart';
+import 'package:find_seat/presentation/screen/show_info/barrel_show_info.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
@@ -70,7 +73,13 @@ class _WidgetRecommendedMovies extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        openShowDetails();
+        //openShowDetails();
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (BuildContext context){
+            return ShowInfoScreen();
+          }
+          )
+        );
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,9 +112,9 @@ class _WidgetRecommendedMovies extends StatelessWidget {
     );
   }
 
-  void openShowDetails() {
-    Navigator.pushNamed(context, Router.SHOW_INFO);
-  }
+  //void openShowDetails() {
+   // Navigator.pushNamed(context, Router.SHOW_INFO);
+  //}
 }
 
 class _ImageRecommendedMovies {

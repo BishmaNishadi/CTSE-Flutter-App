@@ -1,6 +1,8 @@
 import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
 import 'package:find_seat/presentation/custom_ui/svg_image.dart';
 import 'package:find_seat/presentation/router.dart';
+import 'package:find_seat/presentation/screen/all_shows/sc_all_shows.dart';
+import 'package:find_seat/presentation/screen/show_info/sc_show_info.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +69,14 @@ class _WidgetItemCategory extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        openAllShows();
+        //openAllShows();
+
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (BuildContext context){
+              return AllShowsScreen();
+            }
+            )
+        );
       },
       child: Column(
         children: <Widget>[
@@ -90,9 +99,9 @@ class _WidgetItemCategory extends StatelessWidget {
     );
   }
 
-  void openAllShows() {
-    Navigator.pushNamed(_context, Router.ALL_SHOWS);
-  }
+ // void openAllShows() {
+   // Navigator.pushNamed(_context, Router.ALL_SHOWS);
+  //}
 }
 
 class _ItemCategoryVM {

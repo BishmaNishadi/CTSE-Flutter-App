@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 
 void main() {
-  MyApp.initSystemDefault();
+ // MyApp.initSystemDefault();
 
   runApp(
     AppConfig(
       appName: "EAP Films",
       flavorName: "prod",
-      initialRoute: Router.SPLASH,
+      initialRoute: Router.LOGIN,
       child: MyApp(),
     ),
   );

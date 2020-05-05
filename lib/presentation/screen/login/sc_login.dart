@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'barrel_login.dart';
 
+
+
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class LoginScreen extends StatelessWidget {
 
   _buildTopWelcome() => WidgetTopWelcome();
 
-  _buildLoginForm() => WidgetLoginForm();
+  _buildLoginForm() => Login();
 
   _buildBottomSignUp() => WidgetBottomSignUp();
 }
