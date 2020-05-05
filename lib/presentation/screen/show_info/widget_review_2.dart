@@ -17,7 +17,7 @@ class WidgetDisplayReview2 extends StatelessWidget {
             children: <Widget>[
               Flexible(
                 child: Image.asset(
-                  'images/sample_reviewer.png',
+                  'images/casts/reviewer.jpg',
                   width: 24,
                   height: 24,
                 ),
