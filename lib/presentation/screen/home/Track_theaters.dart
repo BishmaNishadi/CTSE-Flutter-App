@@ -52,8 +52,8 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
   Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(21.013298, 105.827523),
-    zoom: 14.4746,
+    target: LatLng(7.8731, 80.7718),
+    zoom: 8.4746,
   );
 
   _buildGoogleMap() {
@@ -66,8 +66,8 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
 
-          LatLng southwest = LatLng(20.994607, 105.786714);
-          LatLng northeast = LatLng(21.047550, 105.840251);
+          LatLng southwest = LatLng(7.2083, 79.8358);
+          LatLng northeast = LatLng(6.68278, 80.39917);
 
           Future.delayed(Duration(seconds: 1), () {
             controller.animateCamera(
@@ -92,8 +92,8 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
 
   _addMarker(BitmapDescriptor bmp) {
     Map<String, LatLng> cines = new Map<String, LatLng>();
-    cines["BHD Phạm Ngọc Thạch"] = LatLng(21.0127928, 105.8337666);
-    cines["BHD Cầu Giấy"] = LatLng(21.035257, 105.794364);
+    cines["Royal Negombo"] = LatLng(7.2083, 79.8358);
+    cines["Savoy Cinema"] = LatLng(6.68278, 80.39917);
     cines["BHD Trung Hòa"] = LatLng(21.013758, 105.800307);
 
     cines.forEach((markerIdVal, latLng) {

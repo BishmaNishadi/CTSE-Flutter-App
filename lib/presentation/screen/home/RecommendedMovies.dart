@@ -3,16 +3,18 @@ import 'package:find_seat/presentation/router.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
-class WidgetRecommendedSeats extends StatelessWidget {
-  List<_ItemRecommendedSeatVM> items = [
-    _ItemRecommendedSeatVM(
-        "images/movie/fdf8fabbc12db9cddc60574f691d26c6@2x.png", "Bigil", 84),
-    _ItemRecommendedSeatVM(
-        "images/movie/d4baeb81488e83cb54f041917ff62f59@2x.png", "Kaithi", 98),
-    _ItemRecommendedSeatVM(
-        "images/movie/61d30e82f43b1cab9f49e576ae457086@2x.png", "Asuran", 94),
-    _ItemRecommendedSeatVM(
-        "images/movie/3890dc6228535cbf5eebd947738d4e52@2x.png", "Sarkar", 87)
+class RecommendedMovies extends StatelessWidget {
+  List<_ImageRecommendedMovies> items = [
+    _ImageRecommendedMovies(
+        "images/movie/kathuru_mithuru.png", "Kathuru Mithuru", 90),
+    _ImageRecommendedMovies(
+        "images/movie/recommended_2.jpg", "Kaala", 85),
+    _ImageRecommendedMovies(
+        "images/movie/thaala.jpg", "Thaala",84),
+    _ImageRecommendedMovies(
+        "images/movie/rush.png", "Rush", 87),
+    _ImageRecommendedMovies(
+        "images/movie/vijayaba_kollaya.png", "Vijayabaha Kollaya", 91)
   ];
 
   @override
@@ -22,26 +24,27 @@ class WidgetRecommendedSeats extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Recommended Movies'.toUpperCase(),
-              style: FONT_CONST.MEDIUM_BLACK2_14),
           WidgetSpacer(height: 14),
-          _buildListRecommendedSeats(),
+        _RecommendedMovies(),
+          Text('RECOMMENDED MOVIES',
+              style: FONT_CONST.MEDIUM_BLACK2_14),
+
         ],
       ),
     );
   }
 
-  _buildListRecommendedSeats() {
+  _RecommendedMovies() {
     return Container(
-      height: 166,
+      height: 170,
       child: Padding(
         padding: const EdgeInsets.only(right: 20),
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            var item = items[index];
+            var it = items[index];
 
-            return _WidgetItemRecommendedSeat(item);
+            return _WidgetRecommendedMovies(it);
           },
           separatorBuilder: (context, index) {
             return WidgetSpacer(width: 14);
@@ -54,16 +57,16 @@ class WidgetRecommendedSeats extends StatelessWidget {
   }
 }
 
-class _WidgetItemRecommendedSeat extends StatelessWidget {
-  _ItemRecommendedSeatVM item;
+class _WidgetRecommendedMovies extends StatelessWidget {
+  _ImageRecommendedMovies item;
 
-  _WidgetItemRecommendedSeat(this.item);
+  _WidgetRecommendedMovies(this.item);
 
-  BuildContext _context;
+  BuildContext context;
 
   @override
   Widget build(BuildContext context) {
-    _context = context;
+    context = context;
 
     return GestureDetector(
       onTap: () {
@@ -75,14 +78,14 @@ class _WidgetItemRecommendedSeat extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              item.photo,
-              width: 93,
+              item.image,
+              width: 90,
               height: 124,
               fit: BoxFit.contain,
             ),
           ),
           WidgetSpacer(height: 4),
-          Text(item.title, style: FONT_CONST.REGULAR_BLACK2_12),
+          Text(item.des, style: FONT_CONST.REGULAR_BLACK2_12),
           WidgetSpacer(height: 2),
           Row(
             children: <Widget>[
@@ -92,7 +95,7 @@ class _WidgetItemRecommendedSeat extends StatelessWidget {
                 size: 14,
               ),
               WidgetSpacer(width: 6),
-              Text('${item.likePercent}%', style: FONT_CONST.REGULAR_GRAY6_10)
+              Text('${item.rate}%', style: FONT_CONST.REGULAR_GRAY6_10)
             ],
           ),
         ],
@@ -101,14 +104,14 @@ class _WidgetItemRecommendedSeat extends StatelessWidget {
   }
 
   void openShowDetails() {
-    Navigator.pushNamed(_context, Router.SHOW_INFO);
+    Navigator.pushNamed(context, Router.SHOW_INFO);
   }
 }
 
-class _ItemRecommendedSeatVM {
-  String photo;
-  String title;
-  int likePercent;
+class _ImageRecommendedMovies {
+  String image;
+  String des;
+  int rate;
 
-  _ItemRecommendedSeatVM(this.photo, this.title, this.likePercent);
+  _ImageRecommendedMovies(this.image, this.des, this.rate);
 }

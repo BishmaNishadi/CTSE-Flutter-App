@@ -7,7 +7,7 @@ import 'package:find_seat/presentation/screen/login/sc_login.dart';
 import 'package:find_seat/presentation/screen/show_info/barrel_show_info.dart';
 import 'package:flutter/material.dart';
 
-import 'screen/home/sc_home.dart';
+import 'screen/home/Movie_Home.dart';
 import 'screen/splash/sc_splash.dart';
 
 class Router {
@@ -24,7 +24,7 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case HOME:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) => Home());
       case SPLASH:
         return MaterialPageRoute(builder: (_) => SplashScreen());
       case LOGIN:

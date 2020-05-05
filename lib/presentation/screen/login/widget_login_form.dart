@@ -1,10 +1,13 @@
 import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
 import 'package:find_seat/presentation/router.dart';
+import 'package:find_seat/presentation/screen/home/Movie_Home.dart';
+import 'package:find_seat/presentation/screen/login/home.dart';
 import 'package:find_seat/presentation/screen/login/widget_btn_facebook.dart';
 import 'package:find_seat/presentation/screen/login/widget_btn_google.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 
 class WidgetLoginForm extends StatefulWidget {
   @override
@@ -94,13 +97,16 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
   }
 
   _buildButtonLogin() {
+
     return SizedBox(
       width: double.infinity,
       height: 50,
       child: RaisedButton(
-        onPressed: () {
+        onPressed:()
+       {
           Navigator.pushNamed(context, Router.HOME);
-        },
+      }
+        ,
         color: COLOR_CONST.DEFAULT,
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(7.0),
@@ -133,6 +139,7 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
           obscureText: true,
 
           textAlign: TextAlign.left,
+          // ignore: missing_return
           validator: (input) {
             if(input.length < 6){
               return 'Please enter an password';
@@ -163,6 +170,7 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
         child: TextFormField(
           style: FONT_CONST.REGULAR_GRAY1_12,
           maxLines: 1,
+          // ignore: missing_return
           validator: (input) {
             if(input.isEmpty){
               return 'Please enter an email';
@@ -179,13 +187,20 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
       ),
     );
   }
-  void signIn (){
+  Future<void> signIn() async{
     //validate fields
     //login to firebase
     final formState = _formKey.currentState;
     if(formState.validate()){
-      FirebaseAuth.instance.signInWithEmailAndPassword(email: null, password: null);
-
+      formState.save();
+      try {
+        await FirebaseAuth.instance
+            .signInWithEmailAndPassword(email: _email, password: _password);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+        //Navigator.pushNamed(context, Router.HOME);
+      }catch(e){
+          print(e.message);
+      }
     }
   }
 }

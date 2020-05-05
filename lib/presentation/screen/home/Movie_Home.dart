@@ -1,10 +1,14 @@
 import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
+import 'Export_Widgets.dart';
 
-import 'barrel_home.dart';
+class Home extends StatefulWidget{
+  @override
+  HomeScreen createState() => HomeScreen();
+}
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,18 +17,19 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             WidgetHomeToolbar(),
-            WidgetHomeBanner(),
+            WidgetBanner(),
             WidgetSpacer(height: 30),
             WidgetHomeCategories(),
             WidgetSpacer(height: 30),
-            WidgetRecommendedSeats(),
+            RecommendedMovies(),
+
+           WidgetSpacer(height: 30),
+            TopRatedMovies(),
             WidgetSpacer(height: 30),
-//            WidgetNearbyTheatres(),
-//            WidgetSpacer(height: 30),
-            WidgetHomeEvents(),
+            BestOf2020Movies(),
             WidgetSpacer(height: 30),
-            WidgetHomePlays(),
             WidgetSpacer(height: 30),
+            WidgetNearbyTheatres(),
           ],
         ),
       ),
