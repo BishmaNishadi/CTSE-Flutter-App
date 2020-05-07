@@ -1,7 +1,7 @@
 export 'Top_bar.dart';
-export 'Widget_Home.dart';
+export 'IconsList.dart';
 export 'TopRatedMovies.dart';
 export 'BestOf2020.dart';
-export 'Widget_Toolbar.dart';
-export 'Track_theaters.dart';
+export 'TopToolbar.dart';
+export 'TheaterLocations.dart';
 export 'RecommendedMovies.dart';

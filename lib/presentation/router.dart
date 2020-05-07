@@ -1,7 +1,7 @@
 import 'package:find_seat/presentation/screen/all_movies/barrelAllShows.dart';
 import 'package:find_seat/presentation/screen/booking/cinema_hall_booking/availableCinemaHallScreen.dart';
 import 'package:find_seat/presentation/screen/list_all_cine/barrel_list_all_cine.dart';
-import 'package:find_seat/presentation/screen/login/sc_login.dart';
+//import 'package:find_seat/presentation/screen/login/sc_login.dart';
 import 'package:find_seat/presentation/screen/show_info/barrelInfoShow.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +23,10 @@ class Router {
     switch (settings.name) {
       case HOME:
         return MaterialPageRoute(builder: (_) => Home());
-      case SPLASH:
-        return MaterialPageRoute(builder: (_) => SplashScreen());
-      case LOGIN:
-        return MaterialPageRoute(builder: (_) => LoginScreen());
+      //case SPLASH:
+        //return MaterialPageRoute(builder: (_) => SplashScreen());
+      //case LOGIN:
+       // return MaterialPageRoute(builder: (_) => LoginScreen());
       case ALL_MOVIES:
         return MaterialPageRoute(builder: (_) => AllShowsScreen());
       case BOOK_TIME_SLOT:

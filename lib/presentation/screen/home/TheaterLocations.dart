@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:find_seat/presentation/common_widgets/barrel_common_widgets.dart';
+import 'package:find_seat/presentation/MainWidgetsCollection/MainWidgets.dart';
 import 'package:find_seat/presentation/router.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class WidgetNearbyTheatres extends StatefulWidget {
+class NearbyCinemas extends StatefulWidget {
   @override
-  _WidgetNearbyTheatresState createState() => _WidgetNearbyTheatresState();
+  _NearbyCinemas createState() => _NearbyCinemas();
 }
 
-class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
+class _NearbyCinemas extends State<NearbyCinemas> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +27,7 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    _openAllCine();
+                    _cinemaList();
                   },
                   child: Text('View all',
                       style: FONT_CONST.MEDIUM_DEFAULT_10,
@@ -43,13 +43,13 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
     );
   }
 
-  _openAllCine() {
+  _cinemaList() {
     Navigator.pushNamed(context, Router.LIST_ALL_CINE);
   }
 
-  Completer<GoogleMapController> _controller = Completer();
+  Completer<GoogleMapController> control = Completer();
 
-  Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
+  Map<MarkerId, Marker> locations = <MarkerId, Marker>{};
 
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(7.8731, 80.7718),
@@ -62,9 +62,9 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
       child: GoogleMap(
         mapType: MapType.normal,
         initialCameraPosition: _kGooglePlex,
-        markers: Set<Marker>.of(markers.values),
+        markers: Set<Marker>.of(locations.values),
         onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
+          control.complete(controller);
 
           LatLng southwest = LatLng(7.2083, 79.8358);
           LatLng northeast = LatLng(6.68278, 80.39917);
@@ -76,27 +76,27 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
             );
           });
 
-          _createMarker(context);
+          _marker(context);
         },
       ),
     );
   }
 
-  Future<void> _createMarker(BuildContext context) async {
+  Future<void> _marker(BuildContext context) async {
     BitmapDescriptor.fromAssetImage(ImageConfiguration(size: Size(4, 4)),
             'assets/ic_nearby_theatre.png')
         .then((icon) {
-      _addMarker(icon);
+      _displayMarker(icon);
     });
   }
 
-  _addMarker(BitmapDescriptor bmp) {
-    Map<String, LatLng> cines = new Map<String, LatLng>();
-    cines["Royal Negombo"] = LatLng(7.2083, 79.8358);
-    cines["Savoy Cinema"] = LatLng(6.68278, 80.39917);
-    cines["BHD Trung Hòa"] = LatLng(21.013758, 105.800307);
+  _displayMarker(BitmapDescriptor bmp) {
+    Map<String, LatLng> cinemas = new Map<String, LatLng>();
+    cinemas["Royal Negombo"] = LatLng(7.2083, 79.8358);
+    cinemas["Savoy Cinema"] = LatLng(6.68278, 80.39917);
 
-    cines.forEach((markerIdVal, latLng) {
+
+    cinemas.forEach((markerIdVal, latLng) {
       final MarkerId markerId = MarkerId(markerIdVal);
 
       final Marker marker = Marker(
@@ -108,7 +108,7 @@ class _WidgetNearbyTheatresState extends State<WidgetNearbyTheatres> {
       );
 
       setState(() {
-        markers[markerId] = marker;
+        locations[markerId] = marker;
       });
     });
   }

@@ -1,7 +1,4 @@
-import 'package:find_seat/presentation/common_widgets/barrel_common_widgets.dart';
-import 'package:find_seat/presentation/router.dart';
-import 'package:find_seat/presentation/screen/login/barrel_login.dart';
-import 'package:find_seat/presentation/screen/login/home.dart';
+import 'package:find_seat/presentation/MainWidgetsCollection/MainWidgets.dart';
 import 'package:find_seat/presentation/screen/show_info/barrelInfoShow.dart';
 import 'package:find_seat/presentation/screen/show_info/showInfoScreen.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';

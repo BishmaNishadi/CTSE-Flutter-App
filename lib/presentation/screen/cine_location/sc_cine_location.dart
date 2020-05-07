@@ -1,4 +1,4 @@
-import 'package:find_seat/presentation/common_widgets/barrel_common_widgets.dart';
+import 'package:find_seat/presentation/MainWidgetsCollection/MainWidgets.dart';
 import 'package:find_seat/presentation/custom_ui/custom_ui.dart';
 import 'package:find_seat/presentation/screen/cine_location/barrel_cine_location.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';

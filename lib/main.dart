@@ -1,13 +1,13 @@
 import 'package:find_seat/app_config.dart';
 import 'package:find_seat/presentation/screen/home/Movie_Home.dart';
-import 'package:find_seat/presentation/screen/login/home.dart';
+//import 'package:find_seat/presentation/screen/login/home.dart';
 import 'package:find_seat/presentation/screen/login/widget_login_form.dart';
-import 'package:find_seat/screens/feed.dart';
+//import 'package:find_seat/screens/feed.dart';
 //import 'package:find_seat/screens/login.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:find_seat/presentation/screen/login/sc_login.dart';
+//import 'package:find_seat/presentation/screen/login/sc_login.dart';
 import 'package:provider/provider.dart';
 
 
