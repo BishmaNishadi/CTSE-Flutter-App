@@ -112,9 +112,6 @@ class _WidgetRecommendedMovies extends StatelessWidget {
     );
   }
 
-  //void openShowDetails() {
-   // Navigator.pushNamed(context, Router.SHOW_INFO);
-  //}
 }
 
 class _ImageRecommendedMovies {

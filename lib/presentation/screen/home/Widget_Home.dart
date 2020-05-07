@@ -1,39 +1,23 @@
 import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
 import 'package:find_seat/presentation/custom_ui/svg_image.dart';
-import 'package:find_seat/presentation/router.dart';
 import 'package:find_seat/presentation/screen/all_shows/sc_all_shows.dart';
-import 'package:find_seat/presentation/screen/show_info/sc_show_info.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
 class WidgetHome extends StatelessWidget {
-  List<_ItemCategoryVM> items = [
+  //categorizing the movies into sub parts by a list view by calling the _IconViewList
+  List<_IconViewList> items = [
 
-    _ItemCategoryVM("Thriller", "assets/ic_activity.svg"),
-    _ItemCategoryVM("Romantic", "assets/ic_events.svg"),
-    _ItemCategoryVM("Action", "assets/ic_plays.svg"),
-    _ItemCategoryVM("Comedy", "assets/ic_sports.svg"),
-    _ItemCategoryVM("Horror", "assets/ic_activity.svg"),
-    _ItemCategoryVM("Real life", "assets/ic_monum.svg"),
+    _IconViewList("Thriller", "assets/movie_icon.svg"),
+    _IconViewList("Romantic", "assets/movie_icon.svg"),
+    _IconViewList("Action", "assets/movie_icon.svg"),
+    _IconViewList("Comedy", "assets/movie_icon.svg"),
+    _IconViewList("Horror", "assets/movie_icon.svg"),
+    _IconViewList("Real life", "assets/movie_icon.svg"),
   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text('Movie categories'.toUpperCase(),
-              style: FONT_CONST.MEDIUM_BLACK2_14),
-          WidgetSpacer(height: 14),
-          _buildListCategory(),
-        ],
-      ),
-    );
-  }
 
-  _buildListCategory() {
+  _showList() {
     return Container(
       height: 58,
       child: Padding(
@@ -43,7 +27,7 @@ class WidgetHome extends StatelessWidget {
           itemBuilder: (context, index) {
             var item = items[index];
 
-            return _WidgetItemCategory(item);
+            return _IconsView(item);
           },
           separatorBuilder: (context, index) {
             return WidgetSpacer(width: 30);
@@ -54,12 +38,28 @@ class WidgetHome extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text('MOVIE CATEGORIES',
+              style: FONT_CONST.MEDIUM_BLACK2_14),
+          WidgetSpacer(height: 14),
+          _showList(),
+        ],
+      ),
+    );
+  }
 }
 
-class _WidgetItemCategory extends StatelessWidget {
-  _ItemCategoryVM item;
+class _IconsView extends StatelessWidget {
+  _IconViewList item;
 
-  _WidgetItemCategory(this.item);
+  _IconsView(this.item);
 
   BuildContext _context;
 
@@ -68,9 +68,8 @@ class _WidgetItemCategory extends StatelessWidget {
     _context = context;
 
     return GestureDetector(
+      //Navigate into the all shows screen
       onTap: () {
-        //openAllShows();
-
         Navigator.of(context).push(
             MaterialPageRoute(builder: (BuildContext context){
               return AllShowsScreen();
@@ -93,20 +92,16 @@ class _WidgetItemCategory extends StatelessWidget {
             ),
           ),
           WidgetSpacer(height: 4),
-          Text(item.title, style: FONT_CONST.REGULAR_GRAY6_12),
+          Text(item.icon_name, style: FONT_CONST.REGULAR_GRAY6_12),
         ],
       ),
     );
   }
-
- // void openAllShows() {
-   // Navigator.pushNamed(_context, Router.ALL_SHOWS);
-  //}
 }
 
-class _ItemCategoryVM {
+class _IconViewList {
   String image;
-  String title;
+  String icon_name;
 
-  _ItemCategoryVM(this.title, this.image);
+  _IconViewList(this.icon_name, this.image);
 }

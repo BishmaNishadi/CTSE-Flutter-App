@@ -206,16 +206,16 @@ class _WidgetLoginFormState extends State<WidgetLoginForm> {
 }*/
 
 
-import 'package:find_seat/api/food_api.dart';
+import 'package:find_seat/api/login_api.dart';
 import 'package:find_seat/model/user.dart';
 import 'package:find_seat/notifier/auth_notifier.dart';
 import 'package:find_seat/presentation/common_widgets/widget_logo_findseat.dart';
 import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
-import 'package:find_seat/utils/my_const/COLOR_CONST.dart';
+//import 'package:find_seat/utils/my_const/COLOR_CONST.dart';
 import 'package:find_seat/utils/my_const/FONT_CONST.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:find_seat/presentation/router.dart';
+//import 'package:find_seat/presentation/router.dart';
 import 'package:provider/provider.dart';
 
 enum AuthMode { Signup, Login }
@@ -228,7 +228,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController _passwordController = new TextEditingController();
   AuthMode _authMode = AuthMode.Login;
 
@@ -242,11 +244,11 @@ class _LoginState extends State<Login> {
   }
 
   void _submitForm() {
-    if (!_formKey.currentState.validate()) {
+    if (!formKey.currentState.validate()) {
       return;
     }
 
-    _formKey.currentState.save();
+    formKey.currentState.save();
 
     AuthNotifier authNotifier = Provider.of<AuthNotifier>(context, listen: false);
 
@@ -271,7 +273,7 @@ class _LoginState extends State<Login> {
       decoration: InputDecoration(
 
         labelText: "Display Name",
-        labelStyle: TextStyle(color: COLOR_CONST.GRAY3,),
+        labelStyle: TextStyle(color: Colors.white54),
         //filled: FONT_CONST.REGULAR_GRAY1_12,
       ),
       keyboardType: TextInputType.text,
@@ -348,13 +350,15 @@ class _LoginState extends State<Login> {
         _user.password = value;
       },
     );
+
   }
 
   Widget _buildConfirmPasswordField() {
     return TextFormField(
       decoration: InputDecoration(
+
         labelText: "Confirm Password",
-        labelStyle: TextStyle(color: Colors.white54),
+        labelStyle: TextStyle(color: Colors.white54, fontFamily: "Poppins-Medium"),
       ),
       style: TextStyle(fontSize: 26, color: Colors.white),
       cursorColor: Colors.white,
@@ -372,6 +376,7 @@ class _LoginState extends State<Login> {
  Widget _topScreen() {
     return Column(
       children: <Widget>[
+
         WidgetSpacer(height: 41),
         SizedBox(
           width: 172,
@@ -381,6 +386,7 @@ class _LoginState extends State<Login> {
         Text('Expect the Unexpected', style: FONT_CONST.MEDIUM_WHITE_22),
         Text(' View & Book A Seat for a Movie ',
             style: FONT_CONST.MEDIUM_WHITE_14),
+
         WidgetSpacer(height: 30),
       ],
     );
@@ -400,22 +406,38 @@ class _LoginState extends State<Login> {
 
     return Scaffold(
       body: Container(
+
         constraints: BoxConstraints.expand(
+
           height: MediaQuery.of(context).size.height,
         ),
-        decoration: BoxDecoration(color: Color(0xff34056D)),
+        decoration: BoxDecoration(
+          //color: Colors.blueAccent,
+        //
+          color: Colors.lightBlueAccent,
+
+          gradient: LinearGradient(
+            colors: [Colors.blue, Colors.white],
+
+          ),
+
+        ),
+
         child: Form(
 
+
           autovalidate: true,
-          key: _formKey,
+          key: formKey,
           child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.fromLTRB(32, 96, 32, 0),
               child: Column(
                 children: <Widget>[
+
                   _topScreen(),
 
                   SizedBox(height: 32),
+
 
                   _authMode == AuthMode.Signup ? _buildDisplayNameField() : Container(),
                   _buildEmailField(),
@@ -423,12 +445,13 @@ class _LoginState extends State<Login> {
                   _authMode == AuthMode.Signup ? _buildConfirmPasswordField() : Container(),
                   SizedBox(height: 32),
                   ButtonTheme(
+                    buttonColor: Colors.white,
                     minWidth: 200,
                     child: RaisedButton(
                       padding: EdgeInsets.all(10.0),
                       child: Text(
-                        'Switch to ${_authMode == AuthMode.Login ? 'Signup' : 'Login'}',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
+                        ' ${_authMode == AuthMode.Login ? 'Signup' : 'Login'}',
+                        style: TextStyle(fontSize: 20, color: Colors.blueAccent),
                       ),
                       onPressed: () {
                         setState(() {
@@ -440,13 +463,14 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: 16),
                   ButtonTheme(
+                    buttonColor: Colors.white,
                     minWidth: 200,
                     child: RaisedButton(
                       padding: EdgeInsets.all(10.0),
                       onPressed: () => _submitForm(),
                       child: Text(
                         _authMode == AuthMode.Login ? 'Login' : 'Signup',
-                        style: TextStyle(fontSize: 20, color: Colors.white),
+                        style: TextStyle(fontSize: 20, color: Colors.blueAccent),
                       ),
                     ),
                   ),
