@@ -3,7 +3,7 @@ import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'barrel_all_shows.dart';
+import 'barrelAllShows.dart';
 
 class WidgetShowGallery extends StatefulWidget {
   @override
@@ -33,6 +33,8 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
 
   List<ItemShowVM> items = [
     ItemShowVM(
+        "images/movie/rush.png", "Rush"),
+    ItemShowVM(
         "images/movie/kathuru_mithuru.png", "කතුරු මිතුරු"),
     ItemShowVM(
         "images/movie/vijayaba_kollaya.png", "විජයබා කොල්ලය"),
@@ -41,9 +43,8 @@ class _WidgetShowGalleryState extends State<WidgetShowGallery>
     ItemShowVM(
         "images/movie/aloko_udapadi.png", "ආලෝකෝ උදපාදි"),
     ItemShowVM(
-        "images/movie/garasarapa.png", "ඝරසරප"),
-    ItemShowVM(
-        "images/movie/rush.png", "Rush")
+        "images/movie/garasarapa.png", "ඝරසරප")
+
   ];
 
   @override

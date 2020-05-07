@@ -1,6 +1,7 @@
 import 'package:find_seat/presentation/common_widgets/widget_spacer.dart';
 import 'package:find_seat/presentation/custom_ui/svg_image.dart';
-import 'package:find_seat/presentation/screen/all_shows/sc_all_shows.dart';
+import 'package:find_seat/presentation/screen/all_movies/allMoviesScreen.dart';
+//import 'package:find_seat/presentation/screen/all_shows/sc_all_shows.dart';
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
@@ -97,6 +98,12 @@ class _IconsView extends StatelessWidget {
       ),
     );
   }
+
+
+  //void openAllShows() {
+   // Navigator.pushNamed(_context, Router.ALL_MOVIES);
+  //}
+
 }
 
 class _IconViewList {

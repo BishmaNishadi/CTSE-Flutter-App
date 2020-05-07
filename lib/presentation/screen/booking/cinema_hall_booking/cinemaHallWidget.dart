@@ -6,15 +6,15 @@ import 'package:find_seat/presentation/screen/cine_location/barrel_cine_location
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
-class WidgetCineTimeSlot extends StatelessWidget {
-  ItemCineTimeSlot item;
+class WidgetTheaterTimeSlot extends StatelessWidget {
+  ItemTheaterTimeSlot item;
   int selectedIndex = -1;
   bool showCineName = true;
   bool showCineDot = true;
 
-  WidgetCineTimeSlot(this.item);
+  WidgetTheaterTimeSlot(this.item);
 
-  WidgetCineTimeSlot.selected({
+  WidgetTheaterTimeSlot.selected({
     @required this.item,
     @required this.selectedIndex,
     @required this.showCineName,
@@ -36,31 +36,31 @@ class WidgetCineTimeSlot extends StatelessWidget {
         children: <Widget>[
           showCineName
               ? Row(
-                  children: <Widget>[
-                    Expanded(
-                      child:
-                          Text(item.cineName, style: FONT_CONST.MEDIUM_BLUE_14),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        _openCineLocation();
-                      },
-                      child:
-                          Icon(Icons.info_outline, color: COLOR_CONST.GRAY1_50),
-                    ),
-                  ],
-                )
+            children: <Widget>[
+              Expanded(
+                child:
+                Text(item.theaterName, style: FONT_CONST.MEDIUM_BLUE_14),
+              ),
+              GestureDetector(
+                onTap: () {
+//                  _openCineLocation();
+                },
+                child:
+                Icon(Icons.info_outline, color: COLOR_CONST.GRAY1_50),
+              ),
+            ],
+          )
               : Container(),
           WidgetSpacer(height: 4),
           Row(
             children: <Widget>[
               showCineDot
                   ? MySvgImage(
-                      path: 'assets/ic_cine_dot.svg',
-                      width: 9.94,
-                      height: 12,
-                      color: COLOR_CONST.GRAY1,
-                    )
+                path: 'assets/ic_cine_dot.svg',
+                width: 9.94,
+                height: 12,
+                color: COLOR_CONST.GRAY1,
+              )
                   : Container(),
               WidgetSpacer(width: showCineDot ? 7 : 0),
               Text(item.textLocation, style: FONT_CONST.REGULAR_GRAY1_12),
@@ -96,7 +96,7 @@ class WidgetCineTimeSlot extends StatelessWidget {
 }
 
 class _WidgetTimeSlot extends StatelessWidget {
-  ItemTimeSlot item;
+  ItemTheater item;
   bool isSelected;
   bool isSmallMode;
 
@@ -104,9 +104,9 @@ class _WidgetTimeSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var itemWidth = 99.0;
-    var itemHeight = 40.0;
-    var fontSize = 14.0;
+    var itemWidth = 98.0;
+    var itemHeight = 38.0;
+    var fontSize = 15.0;
     var textPaddingHoz = 10.0;
 
     var textStyle = FONT_CONST.REGULAR_BLACK2_14;
@@ -117,7 +117,7 @@ class _WidgetTimeSlot extends StatelessWidget {
 
     var itemBg = isSelected ? COLOR_CONST.GREEN : COLOR_CONST.TIME_SLOT_BG;
     var itemBorder =
-        isSelected ? Colors.transparent : COLOR_CONST.TIME_SLOT_BORDER;
+    isSelected ? Colors.transparent : COLOR_CONST.TIME_SLOT_BORDER;
 
     if (isSelected) {
       timeColor = COLOR_CONST.WHITE;
@@ -133,7 +133,7 @@ class _WidgetTimeSlot extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (!isSmallMode) {
-          Navigator.pushNamed(context, Router.BOOK_SEAT_TYPE);
+//          Navigator.pushNamed(context, Router.BOOK_SEAT_TYPE);
         }
       },
       child: Container(
@@ -158,11 +158,11 @@ class _WidgetTimeSlot extends StatelessWidget {
   }
 }
 
-class ItemTimeSlot {
+class ItemTheater {
   String time;
   int hour;
   bool active;
   bool selected;
 
-  ItemTimeSlot(this.time, this.hour, this.active);
+  ItemTheater(this.time, this.hour, this.active);
 }

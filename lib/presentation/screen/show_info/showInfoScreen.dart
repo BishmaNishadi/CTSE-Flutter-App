@@ -3,9 +3,14 @@
 import 'package:find_seat/presentation/common_widgets/barrel_common_widgets.dart';
 import 'package:find_seat/presentation/custom_ui/custom_ui.dart';
 import 'package:find_seat/presentation/router.dart';
-import 'package:find_seat/presentation/screen/all_shows/sc_all_shows.dart';
-import 'package:find_seat/presentation/screen/booking/book_time_slot/sc_book_time_slot.dart';
-import 'package:find_seat/presentation/screen/show_info/barrel_show_info.dart';
+import 'package:find_seat/presentation/screen/booking/cinema_hall_booking/availableCinemaHallScreen.dart';
+
+//import 'package:find_seat/presentation/screen/all_shows/sc_all_shows.dart';
+//import 'package:find_seat/presentation/screen/booking/book_time_slot/sc_book_time_slot.dart';
+//import 'package:find_seat/presentation/screen/show_info/barrel_show_info.dart';
+
+import 'package:find_seat/presentation/screen/show_info/barrelInfoShow.dart';
+
 import 'package:find_seat/utils/my_const/my_const.dart';
 import 'package:flutter/material.dart';
 
