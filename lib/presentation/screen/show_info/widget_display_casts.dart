@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 
 class WidgetShowCasts extends StatelessWidget {
   List<ModelCast> model = [
-    ModelCast('Uddhika', 'images/casts/81202d0dea55189fa442a1ab932a81a7.png'),
+    ModelCast('Uddhika', 'images/casts/uddika.jpg'),
     ModelCast(
-        'Iresha', 'images/casts/646262125800725e14d8c4ff4b2a2181.png'),
-    ModelCast('Saranga', 'images/casts/a053e9fb0c813cd15b34a2edff71ae9d.png'),
+        'Iresha', 'images/casts/iresha.jpg'),
+    ModelCast('Saranga', 'images/casts/saranga.jpg'),
     ModelCast(
-        'Lucky Dias', 'images/casts/289bf4c714c627dc42b17199024a152d.png'),
+        'Lucky Dias', 'images/casts/lucky-dias.jpg'),
     ModelCast(
-        'Sanath', 'images/casts/289bf4c714c627dc42b17199024a152d.png'),
+        'Sanath', 'images/casts/sanath.jpg'),
     ModelCast(
-        'Janith', 'images/casts/289bf4c714c627dc42b17199024a152d.png'),
+        'Janith', 'images/casts/janith.jpg'),
   ];
 
   @override
