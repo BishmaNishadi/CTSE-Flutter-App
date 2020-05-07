@@ -3,7 +3,7 @@
 import 'package:find_seat/Database/DBHelper.dart';
 import 'package:find_seat/model/Review.dart';
 import 'package:find_seat/presentation/screen/home/Movie_Home.dart';
-import 'package:find_seat/presentation/screen/show_info/review_list.dart';
+import 'package:find_seat/presentation/screen/show_info/reviewList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
